@@ -1,0 +1,45 @@
+{
+  "name": "@decooio/sdk",
+  "version": "0.0.1",
+  "description": "Decoo SDK",
+  "main": "packages/sdk",
+  "author": "Decoo Technologies",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:decooio/decoo-sdk.git"
+  },
+  "private": true,
+  "contributors": [
+    "Gavin Fu <gavfu@outlook.com>"
+  ],
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "link": "lerna link",
+    "reset": "lerna run clean && rimraf packages/*/node_modules examples/*/node_modules node_modules",
+    "test": "lerna run test",
+    "test:node": "lerna run test:node",
+    "test:browser": "lerna run test:browser",
+    "test:webworker": "lerna run test:webworker",
+    "test:electron": "lerna run test:electron",
+    "test:electron-main": "lerna run test:electron-main",
+    "test:electron-renderer": "lerna run test:electron-renderer",
+    "test:external": "lerna run test:external",
+    "test:cli": "lerna run test:cli",
+    "test:interop": "lerna run test:interop",
+    "test:interface:client": "lerna run test:interface:client",
+    "test:interface:core": "lerna run test:interface:core",
+    "test:interface:http-go": "lerna run test:interface:http-go",
+    "test:interface:http-js": "lerna run test:interface:http-js",
+    "test:interface:message-port-client": "lerna run test:interface:message-port-client",
+    "coverage": "lerna run coverage",
+    "build": "lerna run build",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "dep-check": "lerna run dep-check",
+    "release:publish": "lerna publish"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
