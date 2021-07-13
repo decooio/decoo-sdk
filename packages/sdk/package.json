@@ -1,6 +1,6 @@
 {
   "name": "@decooio/sdk",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Decoo SDK",
   "keywords": [
     "decoo",
@@ -22,15 +22,22 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "directory": "dist"
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "aegir build && cp package.json ./dist/package.json && cp README.md ./dist/README.md",
+    "build": "aegir build",
     "lint": "aegir lint",
     "coverage": "npx nyc -r html npm run test:node -- --bail",
     "clean": "rimraf ./dist",
-    "dep-check": "aegir dep-check -i aegir -i rimraf"
+    "dep-check": "aegir dep-check -i aegir -i rimraf",
+    "test": "aegir test",
+    "test:node": "aegir test -t node",
+    "test:browser": "aegir test -t browser",
+    "test:webworker": "aegir test -t webworker",
+    "test:electron-main": "aegir test -t electron-main",
+    "test:electron-renderer": "aegir test -t electron-renderer",
+    "test:chrome": "aegir test -t browser -t webworker -- --browsers ChromeHeadless",
+    "test:firefox": "aegir test -t browser -t webworker -- --browsers FirefoxHeadless"
   },
   "devDependencies": {
     "aegir": "^33.0.0",

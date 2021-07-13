@@ -2,10 +2,10 @@
 
 const endpoints = require('./endpoints');
 
-function create () {
+function create() {
   const client = {
-    pinFile: require('./pinFile')(),
-    getFileHash: require('./getFileHash')(),
+    pinFile: require('./pinFile'),
+    getFileHash: require('./getFileHash'),
   }
 
   return client

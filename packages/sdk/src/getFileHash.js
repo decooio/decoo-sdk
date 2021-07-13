@@ -1,11 +1,8 @@
 'use strict'
 
-module.exports = () => {
-  /**
-   * @param {string} filePath
-   */
-  async function getFileHash (filePath) {
-    return `${filePath}_TEST_CID`;
-  }
-  return getFileHash
+/**
+ * @param {string} filePath
+ */
+module.exports = async(filePath) => {
+  return `${filePath}_TEST_CID`;
 }
