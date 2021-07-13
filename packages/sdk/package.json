@@ -2,9 +2,7 @@
   "name": "@decooio/sdk",
   "version": "0.0.1",
   "description": "Decoo SDK",
-  "keywords": [
-
-  ],
+  "keywords": [],
   "license": "MIT",
   "files": [
     "src",
@@ -13,9 +11,7 @@
   ],
   "main": "src/index.js",
   "types": "dist/src/index.d.ts",
-  "eslintConfig": {
-    "extends": "ipfs"
-  },
+  "eslintConfig": {},
   "repository": {
     "type": "git",
     "url": "git@github.com:decooio/decoo-sdk.git"
@@ -26,17 +22,15 @@
     "directory": "dist"
   },
   "scripts": {
-    "build": "aegir build",
+    "build": "aegir build && cp package.json ./dist/package.json",
     "lint": "aegir lint",
     "coverage": "npx nyc -r html npm run test:node -- --bail",
     "clean": "rimraf ./dist",
     "dep-check": "aegir dep-check -i aegir -i rimraf"
   },
-  "dependencies": {
-
-  },
   "devDependencies": {
     "aegir": "^33.0.0",
     "rimraf": "^3.0.2"
-  }
+  },
+  "gitHead": "4e4ac545fe0f6b7e1826f4f0dc0b1af7a51f145a"
 }

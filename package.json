@@ -42,7 +42,7 @@
     "release:pre:non-dirty-repo": "git diff --quiet",
     "release:pre:update-contributors": "aegir release --lint=false --test=false --bump=false --build=false --changelog=false --commit=false --tag=false --push=false --ghrelease=false --docs=false --publish=false --types=false",
     "release:pre:reinstall": "npm run reset && npm i && rimraf package-lock.json packages/*/package-lock.json",
-    "release:pre:bundle": "NODE_ENV=production npm run build -- --scope={ipfs,ipfs-core,ipfs-*client,ipfs-grpc-protocol,ipfs-message-port-*}",
+    "release:pre:bundle": "NODE_ENV=production npm run build",
     "release:publish": "lerna publish",
     "release:publish:from-git": "lerna publish from-git",
     "release:publish:from-package": "lerna publish from-package"

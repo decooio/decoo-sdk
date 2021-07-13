@@ -15,3 +15,10 @@ $ yarn global add aegir
 ```sh
 $ yarn build
 ```
+
+# Publish
+
+Create an *.npmrc* file under the project directory with following contents:
+```
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}
+```
