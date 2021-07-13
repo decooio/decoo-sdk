@@ -1,8 +1,7 @@
 {
   "name": "@decooio/sdk",
-  "version": "0.0.1",
   "description": "Decoo SDK",
-  "keywords": [],
+  "keywords": ["decoo", "ipfs", "crust"],
   "license": "MIT",
   "files": [
     "src",

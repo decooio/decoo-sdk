@@ -1,11 +1,17 @@
 'use strict'
 
-const ipfs = require('./ipfs');
-const oauth = require('./oauth');
-const api = require('./api');
+const endpoints = require('./endpoints');
+
+function create () {
+  const client = {
+    pinFile: require('./pinFile')(),
+    getFileHash: require('./getFileHash')(),
+  }
+
+  return client
+}
 
 module.exports = {
-  ipfs,
-  oauth,
-  api
+  endpoints, // list all DC endpoints
+  create  // create a client
 }
