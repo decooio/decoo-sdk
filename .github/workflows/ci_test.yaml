@@ -1,0 +1,35 @@
+name: ci test
+
+on:
+  push:
+    branches: [ dev, main ]
+
+jobs:
+  test-sdk:
+    strategy:
+      matrix:
+        node: [10, 12, 14]
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+
+      - name: Text on node
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: test:node
+
+      - name: Text on browser
+        uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: test:browser

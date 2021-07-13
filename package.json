@@ -1,5 +1,5 @@
 {
-  "name": "@decooio/sdk",
+  "name": "js-decooio-sdk",
   "version": "0.0.1",
   "description": "Decoo SDK",
   "main": "packages/sdk",

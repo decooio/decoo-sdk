@@ -1,6 +1,9 @@
 'use strict'
 
-const pinFile = () => {
+/**
+ * @param {string|File} filePath
+ * */
+const pinFile = (filePath) => {
   return '';
 }
 
