@@ -20,6 +20,11 @@
     "type": "git",
     "url": "git@github.com:decooio/decoo-sdk.git"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "directory": "dist"
+  },
   "scripts": {
     "build": "aegir build",
     "lint": "aegir lint",
