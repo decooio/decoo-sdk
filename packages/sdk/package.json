@@ -45,6 +45,9 @@
   },
   "gitHead": "ca49d7b6bfd342e4929aac13d65c8824e69f41a9",
   "dependencies": {
-    "ipfs-core": "^0.8.0"
+    "axios": "^0.21.1",
+    "ipfs-core": "^0.8.0",
+    "js-base64": "^3.6.1",
+    "public-encrypt": "^4.0.3"
   }
 }

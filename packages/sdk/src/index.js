@@ -1,13 +1,25 @@
 'use strict'
 
 const listEndpoints = require('./listEndpoints');
+const {normalizeOptions} = require('./utils');
 
-function client(options = {}) {
-  const client = {
-    pinFile: require('./pinFile')
+/** @typedef {import('./types').Options} Options */
+
+/**
+ * @param {Options|string} options
+ * @return {Client}
+ * */
+function create(options = {}) {
+  return new Client(normalizeOptions(options))
+}
+
+class Client {
+  /** @param {Options} options*/
+  constructor(options) {
+    this.options = options
+    this.pinFile = require('./pinFile')(options)
+    // this.pinByHash = require('./pinByHash')(options)
   }
-
-  return client
 }
 
 const utils = {
@@ -16,6 +28,7 @@ const utils = {
 
 module.exports = {
   listEndpoints,
-  client,
-  utils
+  create,
+  utils,
+  Client,
 }

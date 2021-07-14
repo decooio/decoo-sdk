@@ -31,3 +31,6 @@ tsconfig-types.aegir.json
 
 # Operating system files
 .DS_Store
+
+# idea
+.idea

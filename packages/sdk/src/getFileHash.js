@@ -7,8 +7,9 @@ let ipfs;
 
 /**
  * @param {any} fileContent
+ * @return {Promise<string>}
+ *  https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md#filecontent
  */
- // https://github.com/ipfs/js-ipfs/blob/master/docs/core-api/FILES.md#filecontent
 module.exports = async(fileContent) => {
   if (!ipfs) {
     ipfs = await IPFS.create();
