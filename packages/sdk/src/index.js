@@ -1,17 +1,21 @@
 'use strict'
 
-const endpoints = require('./endpoints');
+const listEndpoints = require('./listEndpoints');
 
-function create() {
+function client(options = {}) {
   const client = {
-    pinFile: require('./pinFile'),
-    getFileHash: require('./getFileHash'),
+    pinFile: require('./pinFile')
   }
 
   return client
 }
 
+const utils = {
+  getFileHash: require('./getFileHash')
+}
+
 module.exports = {
-  endpoints, // list all DC endpoints
-  create  // create a client
+  listEndpoints,
+  client,
+  utils
 }

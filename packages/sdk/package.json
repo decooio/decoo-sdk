@@ -1,6 +1,6 @@
 {
   "name": "@decooio/sdk",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Decoo SDK",
   "keywords": [
     "decoo",
@@ -43,5 +43,8 @@
     "aegir": "^33.0.0",
     "rimraf": "^3.0.2"
   },
-  "gitHead": "ca49d7b6bfd342e4929aac13d65c8824e69f41a9"
+  "gitHead": "ca49d7b6bfd342e4929aac13d65c8824e69f41a9",
+  "dependencies": {
+    "ipfs-core": "^0.8.0"
+  }
 }
