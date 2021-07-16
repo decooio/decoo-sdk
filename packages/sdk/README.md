@@ -15,3 +15,21 @@ yarn add @decooio/sdk
 
 ## Usage
 
+```javascript
+import * as fs from "fs";
+
+const decooSdk = require('@decooio/sdk');
+
+// List available endpoints
+const decooEndpoints = await decooSdk.listEndpoints();
+
+// Get Ipfs CID of local file
+const decooUtils = decooSdk.utils;
+const localFileHash = await decooUtils.getFileHash(fs.createReadStream('/Some/Local/File/Path'));
+console.log(localFileHash);
+
+// Connect to an endpoint, and pin local file
+const decooClient = decooSdk.client('https://api-sh.decoo.io');
+const addedFileHash = await decooClient.pinFile('/Some/Local/File/Path');
+console.log(addedFileHash);
+```

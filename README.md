@@ -27,3 +27,7 @@ and run command:
 ```sh
 $ yarn release
 ```
+
+# Usage
+
+Check the package on [npmjs](https://www.npmjs.com/package/@decooio/sdk).
