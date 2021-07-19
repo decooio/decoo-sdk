@@ -12,7 +12,7 @@
   "private": true,
   "contributors": [
     "Gavin Fu <gavfu@outlook.com>",
-    "Eericxu <2681350846@qq.com>"
+    "eericxu <2681350846@qq.com>"
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
