@@ -29,7 +29,12 @@ const localFileHash = await decooUtils.getFileHash(fs.createReadStream('/Some/Lo
 console.log(localFileHash);
 
 // Connect to an endpoint, and pin local file
-const decooClient = decooSdk.client('https://api-sh.decoo.io');
+const decooClient = decooSdk.create({
+  url: decooEndpoints[0].httpHost,
+  jwt: "",
+  privateKey: ""
+});
+
 const addedFileHash = await decooClient.pinFile('/Some/Local/File/Path');
 console.log(addedFileHash);
 ```
