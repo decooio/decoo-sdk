@@ -29,9 +29,14 @@ async function getToken(options) {
     .then((res) => res.data)
   lastToken = data.Data
   lastTokenTime = new Date()
-  return lastToken??''
+  return lastToken ?? ''
+}
+
+function clearToken() {
+  lastToken = null
 }
 
 module.exports = {
-  getToken
+  getToken,
+  clearToken
 }

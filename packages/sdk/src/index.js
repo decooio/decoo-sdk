@@ -17,6 +17,7 @@ class Client {
   /** @param {Options} options*/
   constructor(options) {
     this.options = options
+    require('./token').clearToken()
     this.pinFile = require('./pinFile')(options)
     // this.pinByHash = require('./pinByHash')(options)
   }
