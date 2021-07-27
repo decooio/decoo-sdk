@@ -22,7 +22,7 @@ const token = require('./token')
 
 async function pinFile(opts, file, onProgress, cancel) {
   const tag = 'pinFile:';
-  const access_token = await token.getToken(opts);
+  const access_token = await token.getToken({...opts, force: true });
   console.info(tag + "access_token:", access_token)
   const fileHash = await getFileHash(file);
   console.info(tag + "cid:", fileHash)

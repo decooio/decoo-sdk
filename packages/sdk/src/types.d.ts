@@ -7,6 +7,10 @@ export interface Options {
 
 }
 
+export interface TokenOpt extends Options{
+  force?: boolean,
+}
+
 export interface PinRes {
   PinHash: string,
   PinSize: string,

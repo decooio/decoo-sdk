@@ -1,6 +1,6 @@
 {
   "name": "@decooio/sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Decoo SDK",
   "main": "packages/sdk",
   "author": "Decoo Technologies",
