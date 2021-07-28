@@ -1,38 +1,36 @@
 'use strict'
-export interface Options {
-  url?: string,
-  privateKey?: string,
-  jwt?: string,
-  zone?: 'cn' | 'global' | 'beta',
 
+
+export interface CloudOptions {
+  zone?: 'cn' | 'global' | 'beta',
+  jwt?: string,
 }
 
-export interface TokenOpt extends Options{
+export interface EndpointsOptions {
+  url?: string,
+  privateKey?: string,
+}
+
+export interface Options extends CloudOptions, EndpointsOptions {
+}
+
+export interface TokenOpt extends CloudOptions {
   force?: boolean,
 }
 
 export interface PinRes {
   PinHash: string,
-  PinSize: string,
-  PinDate: string
+  PinSize: number,
+  PinDate: number
 }
 
-export interface PinHashRes{
-  HashToPin: string,
-  JobId: number,
+export interface PinHashRes extends PinRes{
+  JobId: string,
   JobStatus: string
 }
 
-export interface Endpoint{
+export interface Endpoint {
   id: number,
-  createAt: string,
-  dcName: string,
-  dcType: 0,
-  httpHost: string,
-  httpPassword: string,
-  ipfsApiHost: string,
-  lastUpdateAt: string,
-  publicKey: string,
-  seed: string,
-  userId: number
+  name: string,
+  apiHost: string,
 }

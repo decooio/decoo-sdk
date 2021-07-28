@@ -2,6 +2,7 @@
 
 /**
  * @typedef {import('./types').Options} Options
+ * @typedef {import('./types').CloudOptions} CloudOptions
  */
 
 /**
@@ -38,16 +39,15 @@ const strToUint8Array = (str) => {
 }
 
 /**
- * @param {Options} options
+ * @param {Options|CloudOptions} options
  * @returns {string}
  */
 const getCloudUrl = (options) => {
   if (options.zone === 'beta')
     return "https://beta.api.decoo.io"
-  if (options.zone === 'cn'){
-    return "https://api.decoo-cloud.cn"
-  }
-  return "https://api.decoo.io"
+  if (options.zone === 'global')
+    return "https://api.decoo.io"
+  return "https://api.decoo-cloud.cn"
 }
 
 module.exports = {

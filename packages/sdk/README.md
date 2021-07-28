@@ -21,7 +21,10 @@ import * as fs from "fs";
 const decooSdk = require('@decooio/sdk');
 
 // List available endpoints
-const decooEndpoints = await decooSdk.listEndpoints();
+const decooEndpoints = await decooSdk.listEndpoints({
+  zone: "cn", // default 'cn'
+  jwt: "********"
+});
 
 // Get Ipfs CID of local file
 const decooUtils = decooSdk.utils;
@@ -30,11 +33,17 @@ console.log(localFileHash);
 
 // Connect to an endpoint, and pin local file
 const decooClient = decooSdk.create({
-  url: decooEndpoints[0].httpHost,
-  jwt: "",
-  privateKey: ""
+  zone: "cn", // default 'cn'
+  url: decooEndpoints[0].apiHost,
+  jwt: "********",
+  privateKey: "********"
 });
 
+// pinFile 
 const addedFileHash = await decooClient.pinFile('/Some/Local/File/Path');
 console.log(addedFileHash);
+
+// pinByHash
+const byHash = await decooClient.pingByHash('Qmalksjkjfkaklsjdkf');
+console.log(byHash)
 ```

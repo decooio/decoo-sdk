@@ -1,6 +1,7 @@
 'use strict'
 
 const listEndpoints = require('./listEndpoints');
+const token = require('./token')
 const {normalizeOptions} = require('./utils');
 
 /** @typedef {import('./types').Options} Options */
@@ -19,7 +20,7 @@ class Client {
     this.options = options
     require('./token').clearToken()
     this.pinFile = require('./pinFile')(options)
-    // this.pinByHash = require('./pinByHash')(options)
+    this.pinByHash = require('./pinByHash')(options)
   }
 }
 
@@ -28,6 +29,7 @@ const utils = {
 }
 
 module.exports = {
+  token,
   listEndpoints,
   create,
   utils,

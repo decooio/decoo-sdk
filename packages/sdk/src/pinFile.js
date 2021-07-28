@@ -22,7 +22,11 @@ const token = require('./token')
 
 async function pinFile(opts, file, onProgress, cancel) {
   const tag = 'pinFile:';
-  const access_token = await token.getToken({...opts, force: true });
+  const access_token = await token.getToken({
+    zone: opts.zone,
+    jwt: opts.jwt,
+    force: true
+  });
   console.info(tag + "access_token:", access_token)
   const fileHash = await getFileHash(file);
   console.info(tag + "cid:", fileHash)
@@ -45,8 +49,7 @@ async function pinFile(opts, file, onProgress, cancel) {
     method: 'post',
     data: form,
     headers: {
-      UserAccessToken: access_token,
-      Authorization: "Bearer " + opts.jwt
+      UserAccessToken: access_token
     },
     /** @param {any} p */
     onUploadProgress: (p) => {

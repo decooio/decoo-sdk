@@ -1,7 +1,9 @@
 'use strict'
 const axios = require("axios");
 const {getCloudUrl} = require("./utils")
-/** @typedef {import("./types").TokenOpt} TokenOpt*/
+/**
+ * @typedef {import("./types").TokenOpt} TokenOpt
+ * */
 
 /** @type {string|null} lastToken */
 let lastToken = null
