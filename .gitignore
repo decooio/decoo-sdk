@@ -34,3 +34,6 @@ tsconfig-types.aegir.json
 
 # idea
 .idea
+
+# env
+.env.js

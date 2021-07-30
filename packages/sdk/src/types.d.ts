@@ -34,3 +34,48 @@ export interface Endpoint {
   name: string,
   apiHost: string,
 }
+
+export interface Mtime {
+  secs: number
+  nsecs?: number
+}
+
+export type MtimeLike = Mtime | { Seconds: number, FractionalNanoseconds?: number } | [number, number] | Date
+
+export type ToContent =
+  | string
+  | InstanceType<typeof String>
+  | ArrayBufferView
+  | ArrayBuffer
+  | Blob
+  | ReadableStream<Uint8Array>
+
+export type ToMode =
+  | string
+  | number
+
+export interface ToFileMetadata {
+  mode?: ToMode
+  mtime?: MtimeLike
+}
+
+export interface ToFile extends ToFileMetadata {
+  path?: string
+  content: ToContent
+}
+
+// export interface ToDirectory extends ToFileMetadata {
+//   path: string
+//   content?: undefined
+// }
+
+export interface ToFileMetadata {
+  mode?: ToMode
+  mtime?: MtimeLike
+}
+
+
+export type ImportCandidate =
+  | ToFile
+  // | ToDirectory
+  | ToContent

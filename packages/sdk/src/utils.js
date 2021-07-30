@@ -50,8 +50,16 @@ const getCloudUrl = (options) => {
   return "https://api.decoo-cloud.cn"
 }
 
+const isBrowser = typeof window === 'object' && typeof document === 'object' && document.nodeType === 9
+const isNode = typeof require === 'function' && typeof process !== 'undefined' && typeof process.release !== 'undefined' && process.release.name === 'node'
+
+const teeFile = require('./teeFile')
+
 module.exports = {
   normalizeOptions,
   strToUint8Array,
-  getCloudUrl
+  getCloudUrl,
+  isBrowser,
+  isNode,
+  teeFile,
 }
