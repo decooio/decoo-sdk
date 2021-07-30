@@ -40,7 +40,12 @@ const decooClient = decooSdk.create({
 });
 
 // pinFile 
-const addedFileHash = await decooClient.pinFile('/Some/Local/File/Path');
+const file = fs.createReadStream('/Some/Local/File/Path/name.txt')
+const addedFileHash = await decooClient.pinFile(file);
+console.log(addedFileHash);
+
+// you can pin string as file
+const addedFileHash = await decooClient.pinFile("Decoo, the Entrance to Web 3.0");
 console.log(addedFileHash);
 
 // pinByHash
