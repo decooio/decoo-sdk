@@ -43,6 +43,7 @@ const strToUint8Array = (str) => {
  * @returns {string}
  */
 const getCloudUrl = (options) => {
+  if(options.baseUrl) return options.baseUrl
   if (options.zone === 'beta')
     return "https://beta.api.decoo.io"
   if (options.zone === 'global')

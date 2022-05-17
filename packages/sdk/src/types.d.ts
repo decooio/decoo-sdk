@@ -4,6 +4,7 @@
 export interface CloudOptions {
   zone?: 'cn' | 'global' | 'beta',
   jwt?: string,
+  baseUrl?: string,
 }
 
 export interface EndpointsOptions {
