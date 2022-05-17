@@ -11,8 +11,8 @@
   },
   "private": true,
   "contributors": [
-    "Gavin Fu <gavfu@outlook.com>",
-    "eericxu <2681350846@qq.com>"
+    "eericxu <2681350846@qq.com>",
+    "Gavin Fu <gavfu@outlook.com>"
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
