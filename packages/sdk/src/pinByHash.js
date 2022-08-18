@@ -19,8 +19,7 @@ const token = require('./token')
 async function pinByHash(opts, cid) {
   const tag = 'pinByHash:';
   const access_token = await token.getToken({
-    zone: opts.zone,
-    jwt: opts.jwt,
+    ...opts,
     force: true
   });
   console.info(tag + "cid:", cid)
