@@ -29,8 +29,7 @@ const deepCopy = require('deep-copy-all')
 async function pinFile(opts, file, onProgress, cancel) {
   const tag = 'pinFile:';
   const access_token = await token.getToken({
-    zone: opts.zone,
-    jwt: opts.jwt,
+    ...opts,
     force: true
   });
   const [one, two] = utils.teeFile(file)
